@@ -67,12 +67,19 @@
     const a = x + y + z;
 
     const redirectPage = "https://youtu.be/A-MnLVPL0pk";
-
+    
+    function normalize(s){
+    return s.replace(/[^\w\s]|_/g, "")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
+    }
+    
     function checkCode() {
-      const userCode = document.getElementById("codeInput").value;
+      const userCode = document.getElementById("codeInput").value || " ";
       const messageEl = document.getElementById("message");
 
-      if (userCode === a) {
+      if (normalize(userCode) === normalize(a)) {
         messageEl.style.color = "green";
         messageEl.textContent = "no way you actually did that? (redirecting)";
 
@@ -87,3 +94,4 @@
   </script>
 </body>
 </html>
+
