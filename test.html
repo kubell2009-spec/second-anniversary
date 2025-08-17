@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      padding: 8px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Access Code</h2>
+    <input type="password" id="codeInput" placeholder="Enter code">
+    <br>
+    <button onclick="checkCode()">Submit</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    const x = "i";
+
+    function someHelper() {
+      return true;
+    }
+
+    const y = " love";
+
+    let temp = 0;
+
+    const z = " you";
+
+    const a = x + y + z;
+
+    const redirectPage = "https://youtu.be/A-MnLVPL0pk";
+
+    function checkCode() {
+      const userCode = document.getElementById("codeInput").value;
+      const messageEl = document.getElementById("message");
+
+      if (userCode === a) {
+        messageEl.style.color = "green";
+        messageEl.textContent = "no way you actually did that? (redirecting)";
+
+        setTimeout(() => {
+          window.location.href = redirectPage;
+        }, 3000);
+      } else {
+        messageEl.style.color = "red";
+        messageEl.textContent = "you suck! what a bum! try again.";
+      }
+    }
+  </script>
+</body>
+</html>
